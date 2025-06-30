@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"command": "npx",
+			"args": [
+				"http-server",
+				"public"
+			],
+			"label": "Iniciar servidor HTTP para la carpeta public",
+			"type": "shell",
+			"isBackground": true
+		}
+	]
+}
