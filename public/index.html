@@ -76,21 +76,374 @@
           background: linear-gradient(90deg,#a5b4fc 0%,#6366f1 100%);
           color: #fff;
         }
+      @media (max-width: 600px) {
+        /* Apilar logo y título en header */
+        header > div {
+          flex-direction: column !important;
+          align-items: center !important;
+          gap: 0.3em !important;
+        }
+        header img[alt="Unify logo"] {
+          height: 38px !important;
+          width: 38px !important;
+          border-radius: 12px !important;
+        }
+        nav button, nav input[type="text"] {
+          display: none !important;
+        }
+        #mobileMenuBtn {
+          display: flex !important;
+        }
+        #mobileMenuOverlay {
+          display: flex !important;
+        }
+        #welcome {
+          flex-direction: column !important;
+          gap: 1.2em !important;
+          min-height: unset !important;
+          padding: 1.2em 0.2em !important;
+        }
+        #welcome > div {
+          min-width: 0 !important;
+          max-width: 100vw !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        #welcome img[alt="Unify logo"] {
+          height: 90px !important;
+          width: 90px !important;
+          border-radius: 18px !important;
+        }
+        #welcome h1 {
+          font-size: 2rem !important;
+          margin: 0.5em 0 0.2em 0 !important;
+        }
+        #welcome p {
+          font-size: 1.1rem !important;
+          max-width: 95vw !important;
+        }
+        #loginForm, #registerForm {
+          background: #fff !important;
+          box-shadow: 0 6px 32px #6366f140 !important;
+          border-radius: 18px !important;
+          padding: 2em 1em 1.5em 1em !important;
+          max-width: 98vw !important;
+          margin: 1.2em auto 1.2em auto !important;
+          border: 1.5px solid #a5b4fc30 !important;
+          transition: box-shadow 0.25s, border 0.25s;
+          animation: fadeInForm 0.7s cubic-bezier(.4,1.4,.6,1) 1;
+        }
+        #loginForm input, #registerForm input {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          box-sizing: border-box !important;
+          margin-left: -1em !important;
+          margin-right: -1em !important;
+        }
+        #mainHeader {
+          position: sticky !important;
+          top: 0 !important;
+          z-index: 1200 !important;
+        }
+        #loginForm button, #registerForm button {
+          font-size: 1.13em !important;
+          padding: 1em 0 !important;
+          border-radius: 12px !important;
+          width: 100% !important;
+          margin: 0.5em 0 0 0 !important;
+          background: linear-gradient(90deg,#6366f1 0%,#1da1f2 100%) !important;
+          color: #fff !important;
+          font-weight: bold !important;
+          box-shadow: 0 2px 12px #7c3aed30 !important;
+          border: none !important;
+          transition: background 0.18s, box-shadow 0.18s, transform 0.1s;
+        }
+        #loginForm button:active, #registerForm button:active {
+          background: linear-gradient(90deg,#1da1f2 0%,#6366f1 100%) !important;
+          box-shadow: 0 1px 4px #7c3aed20 !important;
+          transform: scale(0.97);
+        }
+        #loginForm label, #registerForm label {
+          font-size: 1.05em !important;
+          margin-bottom: 0.3em !important;
+          color: #6366f1 !important;
+          font-weight: 600 !important;
+        }
+        #loginError, #registerError {
+          font-size: 1em !important;
+          padding: 0.7em 0.4em !important;
+          margin-bottom: 0.7em !important;
+          color: #d32f2f !important;
+          background: #fbe9e7 !important;
+          border-radius: 10px !important;
+          border: 1.2px solid #d32f2f33 !important;
+          font-weight: 600 !important;
+          letter-spacing: 0.01em;
+        }
+        #showRegister, #showLogin {
+          font-size: 1.05em !important;
+          margin-top: 1em !important;
+          display: block !important;
+          text-align: center !important;
+          color: #6366f1 !important;
+          font-weight: 600 !important;
+        }
+        #showRegister a, #showLogin a {
+          color: #1da1f2 !important;
+          text-decoration: underline dotted !important;
+        }
+        @keyframes fadeInForm {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: none; }
+        }
+        #perfilDiv, #chatDiv {
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100vw !important;
+          max-width: 100vw !important;
+          height: 100vh !important;
+          max-height: 100vh !important;
+          border-radius: 0 !important;
+          padding: 0 !important;
+          z-index: 2000 !important;
+          background: #fff !important;
+          box-shadow: 0 0 32px #6366f120 !important;
+          overflow-y: auto !important;
+          transform: none !important;
+        }
+        #perfilDiv > div:first-child, #chatDiv > div:first-child {
+          border-radius: 0 !important;
+          padding: 1.2em 1em 1em 1em !important;
+        }
+        #perfilDiv .close-btn, #chatDiv .close-btn {
+          position: absolute !important;
+          top: 16px !important;
+          right: 16px !important;
+          background: #f5f8fa !important;
+          border: none !important;
+          border-radius: 50% !important;
+          width: 44px !important;
+          height: 44px !important;
+          font-size: 2em !important;
+          color: #6366f1 !important;
+          box-shadow: 0 2px 8px #7c3aed20 !important;
+          cursor: pointer !important;
+          z-index: 2100 !important;
+        }
+        #usersAside {
+          width: 100vw !important;
+          min-width: unset !important;
+          max-width: 100vw !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+          padding: 1em 0.2em 1.2em 0.2em !important;
+          background: none !important;
+        }
+        #usersList {
+          flex-direction: row !important;
+          gap: 0.7em !important;
+          overflow-x: auto !important;
+          overflow-y: hidden !important;
+          padding-bottom: 0.5em !important;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+        }
+        .profile-card {
+          min-width: 210px !important;
+          max-width: 80vw !important;
+          flex: 0 0 auto !important;
+          scroll-snap-align: start;
+          margin-bottom: 0 !important;
+        }
+        #usersAside > div:first-child {
+          margin-bottom: 0.7em !important;
+          padding-left: 0.7em !important;
+        }
+        #main-content .main-flex {
+          flex-direction: column !important;
+          gap: 0 !important;
+        }
+        .main-center {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          padding: 0 0.2em !important;
+        }
+        #feed, #post-section {
+          width: 100vw !important;
+          max-width: 100vw !important;
+          padding: 0 !important;
+        }
+        .post-section-card {
+          background: #fff !important;
+          border-radius: 14px !important;
+          box-shadow: 0 2px 12px #7c3aed18 !important;
+          padding: 1em 0.7em !important;
+          margin: 0.7em 0 !important;
+        }
+        #postForm textarea {
+          font-size: 1.08em !important;
+          border-radius: 10px !important;
+          padding: 1em !important;
+          width: 100% !important;
+          min-height: 70px !important;
+          border: 1.5px solid #a5b4fc !important;
+          margin-bottom: 0.7em !important;
+        }
+        #postForm button {
+          font-size: 1.1em !important;
+          padding: 0.9em 0 !important;
+          border-radius: 10px !important;
+          width: 100% !important;
+          background: linear-gradient(90deg,#6366f1 0%,#1da1f2 100%) !important;
+          color: #fff !important;
+          font-weight: bold !important;
+          box-shadow: 0 2px 8px #7c3aed20 !important;
+        }
+        #feed > .post-card {
+          background: #fff !important;
+          border-radius: 14px !important;
+          box-shadow: 0 2px 12px #7c3aed18 !important;
+          padding: 1em 0.7em !important;
+          margin: 0.7em 0 !important;
+          width: 100% !important;
+          max-width: 100vw !important;
+        }
+        .post-card img {
+          max-width: 100% !important;
+          height: auto !important;
+          border-radius: 10px !important;
+          margin-bottom: 0.5em !important;
+        }
+        .post-card .post-actions {
+          display: flex !important;
+          gap: 1em !important;
+          margin-top: 0.7em !important;
+        }
+        .post-card .post-action-btn {
+          flex: 1 1 0;
+          font-size: 1em !important;
+          padding: 0.7em 0 !important;
+          border-radius: 10px !important;
+          background: #f5f8fa !important;
+          color: #6366f1 !important;
+          border: 1.2px solid #a5b4fc !important;
+          font-weight: 600 !important;
+        }
+      }
+      #mobileMenuBtn {
+        display: none;
+        background: none;
+        border: none;
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        z-index: 1200;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      #mobileMenuBtn span {
+        display: block;
+        width: 28px;
+        height: 4px;
+        margin: 4px 0;
+        background: #fff;
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+      #mobileMenuOverlay {
+        display: none !important;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(60,60,80,0.18);
+        z-index: 1300;
+        align-items: flex-start;
+        justify-content: flex-end;
+        transition: background 0.2s;
+      }
+      #mobileMenu {
+        background: #fff;
+        width: 82vw;
+        max-width: 320px;
+        height: 100vh;
+        box-shadow: -2px 0 24px #6366f120;
+        border-radius: 18px 0 0 18px;
+        padding: 2.2em 1.2em 1.2em 1.2em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2em;
+        animation: slideInMenu 0.3s cubic-bezier(.4,1.4,.6,1);
+      }
+      #mobileMenu button, #mobileMenu input {
+        width: 100%;
+        margin: 0.5em 0;
+        font-size: 1.1em;
+        border-radius: 10px;
+        padding: 0.8em 1em;
+        border: 1.5px solid #a5b4fc;
+        background: #f5f8fa;
+        color: #6366f1;
+        font-weight: bold;
+      }
+      #mobileMenu button {
+        background: linear-gradient(90deg,#6366f1 0%,#1da1f2 100%);
+        color: #fff;
+        border: none;
+        box-shadow: 0 2px 8px #7c3aed20;
+        margin-bottom: 0.5em;
+      }
+      #mobileMenuClose {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        background: none;
+        border: none;
+        font-size: 2em;
+        color: #6366f1;
+        cursor: pointer;
+      }
+      @keyframes slideInMenu {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: none; opacity: 1; }
+      }
+      @media (max-width: 600px) {
+        #mainHeader.hide-on-scroll {
+          transform: translateY(-100%);
+          transition: transform 0.25s cubic-bezier(.4,1.4,.6,1);
+        }
+        #mainHeader {
+          transition: transform 0.25s cubic-bezier(.4,1.4,.6,1);
+        }
+      }
     </style>
-</head>
-<body>
-    <header id="mainHeader" style="display:block;background:linear-gradient(90deg,#6366f1 0%,#1da1f2 100%);box-shadow:0 2px 16px #6366f120;padding:0.7em 3vw 0.7em 3vw;">
-        <div style="display:flex;align-items:center;gap:18px;">
-            <img src="Imagen de WhatsApp 2025-06-30 a las 16.27.11_e30dd0a0.jpg" alt="Unify logo" style="height:54px;width:54px;border-radius:18px;box-shadow:0 2px 12px #7c3aed30;border:2px solid #fff;background:#fff;">
-            <h1 style="margin:0;font-size:2.5rem;color:#fff;letter-spacing:-2px;font-weight:900;text-shadow:0 4px 18px #1da1f280,0 1px 0 #6366f1;">Unify</h1>
-        </div>
-        <nav>
-            <button id="loginBtn" style="background:#fff;color:#1da1f2;font-weight:bold;border:none;border-radius:999px;padding:0.6em 1.5em;font-size:1.1em;box-shadow:0 2px 8px #7c3aed20;transition:background 0.2s;">Iniciar Sesión</button>
-            <button id="logoutBtn" style="display:none;background:#fff;color:#d32f2f;font-weight:bold;border:none;border-radius:999px;padding:0.6em 1.5em;font-size:1.1em;box-shadow:0 2px 8px #7c3aed20;transition:background 0.2s;">Cerrar Sesión</button>
-            <input type="text" id="searchUser" placeholder="Buscar usuarios..." style="margin-left:1.2rem;padding:0.5rem 1.1rem;border-radius:8px;border:1.5px solid #a5b4fc;font-size:1em;box-shadow:0 2px 8px #7c3aed10;">
-            <div id="searchResults" style="position:absolute;background:#fff;z-index:1001;box-shadow:0 2px 8px rgba(0,0,0,0.08);border-radius:8px;display:none;"></div>
-        </nav>
+  </head>
+  <body>
+    <header id="mainHeader" style="display:block;background:linear-gradient(90deg,#6366f1 0%,#1da1f2 100%);box-shadow:0 2px 16px #6366f120;padding:0.7em 3vw 0.7em 3vw;position:sticky;top:0;z-index:1000;">
+      <button id="mobileMenuBtn" aria-label="Abrir menú" style="display:none;">
+        <span></span><span></span><span></span>
+      </button>
+      <div style="display:flex;align-items:center;gap:18px;">
+        <img src="Imagen de WhatsApp 2025-06-30 a las 16.27.11_e30dd0a0.jpg" alt="Unify logo" style="height:54px;width:54px;border-radius:18px;box-shadow:0 2px 12px #7c3aed30;border:2px solid #fff;background:#fff;">
+        <h1 style="margin:0;font-size:2.5rem;color:#fff;letter-spacing:-2px;font-weight:900;text-shadow:0 4px 18px #1da1f280,0 1px 0 #6366f1;">Unify</h1>
+      </div>
+      <nav>
+        <button id="loginBtn" style="background:#fff;color:#1da1f2;font-weight:bold;border:none;border-radius:999px;padding:0.6em 1.5em;font-size:1.1em;box-shadow:0 2px 8px #7c3aed20;transition:background 0.2s;">Iniciar Sesión</button>
+        <button id="logoutBtn" style="display:none;background:#fff;color:#d32f2f;font-weight:bold;border:none;border-radius:999px;padding:0.6em 1.5em;font-size:1.1em;box-shadow:0 2px 8px #7c3aed20;transition:background 0.2s;">Cerrar Sesión</button>
+        <input type="text" id="searchUser" placeholder="Buscar usuarios..." style="margin-left:1.2rem;padding:0.5rem 1.1rem;border-radius:8px;border:1.5px solid #a5b4fc;font-size:1em;box-shadow:0 2px 8px #7c3aed10;">
+        <div id="searchResults" style="position:absolute;background:#fff;z-index:1001;box-shadow:0 2px 8px rgba(0,0,0,0.08);border-radius:8px;display:none;"></div>
+      </nav>
     </header>
+    <div id="mobileMenuOverlay" style="display:none;">
+      <div id="mobileMenu">
+        <button id="mobileMenuClose" aria-label="Cerrar menú">×</button>
+        <button id="mobileLoginBtn">Iniciar Sesión</button>
+        <button id="mobileLogoutBtn" style="display:none;">Cerrar Sesión</button>
+        <input type="text" id="mobileSearchUser" placeholder="Buscar usuarios...">
+      </div>
+    </div>
     <div id="welcome" style="display:flex;flex-direction:row;align-items:center;justify-content:center;min-height:100vh;padding:0;background:linear-gradient(135deg,#e0e7ff 0%,#a5b4fc 100%);gap:4.5em;">
         <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:340px;max-width:400px;margin-right:4vw;">
             <button id="loginBtnGoogle" style="background:#1da1f2;color:#fff;border:none;border-radius:999px;padding:1.1rem 2.7rem;font-size:1.3rem;font-weight:bold;cursor:pointer;box-shadow:0 2px 12px #7c3aed30;margin-bottom:1.5em;">Iniciar Sesión con Google</button>
@@ -180,5 +533,155 @@
         </div>
     </main>
     <!-- Eliminar el footer -->
-</body>
+    <script>
+    // --- Menú de perfil en header (escritorio y móvil) ---
+    function renderProfileMenu(user) {
+      const menu = document.getElementById('profileMenu');
+      if (!menu) return;
+      if (!user) { menu.innerHTML = ''; return; }
+      let avatar = user.photoURL && user.photoURL !== '' && user.photoURL !== 'null'
+        ? `<img src="${user.photoURL}" alt="avatar" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid #7c3aed;">`
+        : `<div style="width:36px;height:36px;border-radius:50%;background:#e0e7ff;display:inline-flex;align-items:center;justify-content:center;border:2px solid #7c3aed;"><svg width='16' height='16' fill='none' viewBox='0 0 24 24'><circle cx='12' cy='8' r='6' fill='#a5b4fc'/><path d='M4 20c0-2.21 3.58-4 8-4s8 1.79 8 4' fill='#a5b4fc'/></svg></div>`;
+      menu.innerHTML = `
+        <div id="profileMenuBtn" style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+          ${avatar}
+          <span style="color:#fff;font-weight:bold;">${user.displayName}</span>
+        </div>
+        <button id="profileLogoutBtn" style="background:#fff;color:#d32f2f;font-weight:bold;border:none;border-radius:999px;padding:0.5em 1.2em;font-size:1em;box-shadow:0 2px 8px #7c3aed20;transition:background 0.2s;">Cerrar sesión</button>
+      `;
+      document.getElementById('profileMenuBtn').onclick = () => window.mostrarPerfilUsuario(user.uid);
+      document.getElementById('profileLogoutBtn').onclick = () => window.auth && window.auth.signOut();
+    }
+    // Integrar con Firebase Auth
+    if (window.firebase && window.firebase.auth) {
+      window.auth.onAuthStateChanged(user => {
+        renderProfileMenu(user);
+      });
+    }
+    </script>
+    <script>
+      // --- Menú hamburguesa móvil SOLO en móvil ---
+      function isMobile() {
+        return window.innerWidth <= 600;
+      }
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileMenuClose = document.getElementById('mobileMenuClose');
+      const loginBtn = document.getElementById('loginBtn');
+      const logoutBtn = document.getElementById('logoutBtn');
+      const mobileLoginBtn = document.getElementById('mobileLoginBtn');
+      const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
+      const searchUser = document.getElementById('searchUser');
+      const mobileSearchUser = document.getElementById('mobileSearchUser');
+      function syncMobileMenu() {
+        if (loginBtn && loginBtn.style.display !== 'none') {
+          mobileLoginBtn.style.display = '';
+          mobileLogoutBtn.style.display = 'none';
+        } else {
+          mobileLoginBtn.style.display = 'none';
+          mobileLogoutBtn.style.display = '';
+        }
+      }
+      function closeMobileMenu() {
+        if (mobileMenuOverlay) mobileMenuOverlay.style.display = 'none';
+      }
+      function openMobileMenu() {
+        if (isMobile() && mobileMenuOverlay) {
+          mobileMenuOverlay.style.display = 'flex';
+          syncMobileMenu();
+          if (searchUser && mobileSearchUser) mobileSearchUser.value = searchUser.value;
+        }
+      }
+      // Asegurar que el menú esté oculto al cargar
+      window.addEventListener('DOMContentLoaded', () => {
+        if (mobileMenuOverlay) mobileMenuOverlay.style.display = 'none';
+      });
+      if (mobileMenuBtn && mobileMenuOverlay && mobileMenuClose) {
+        mobileMenuBtn.onclick = (e) => {
+          e.stopPropagation();
+          openMobileMenu();
+        };
+        mobileMenuClose.onclick = (e) => {
+          e.stopPropagation();
+          closeMobileMenu();
+        };
+        mobileLoginBtn.onclick = () => {
+          closeMobileMenu();
+          if (loginBtn) loginBtn.click();
+        };
+        mobileLogoutBtn.onclick = () => {
+          closeMobileMenu();
+          if (logoutBtn) logoutBtn.click();
+        };
+        mobileSearchUser.oninput = (e) => {
+          if (searchUser) searchUser.value = e.target.value;
+        };
+        // Cerrar menú al hacer click fuera del panel
+        mobileMenuOverlay.onclick = (e) => {
+          if (e.target === mobileMenuOverlay) {
+            closeMobileMenu();
+          }
+        };
+        // Prevenir cierre al hacer click dentro del menú
+        if (mobileMenu) {
+          mobileMenu.onclick = (e) => {
+            e.stopPropagation();
+          };
+        }
+      }
+      // Ocultar menú si cambia a escritorio
+      window.addEventListener('resize', () => {
+        if (!isMobile() && mobileMenuOverlay) {
+          closeMobileMenu();
+        }
+      });
+    </script>
+    <script>
+      // Mostrar/ocultar botón cerrar sesión según login
+      function updateLogoutBtn() {
+        var body = document.body;
+        var logoutBtn = document.getElementById('logoutBtn');
+        var loginBtn = document.getElementById('loginBtn');
+        if (logoutBtn && loginBtn) {
+          if (loginBtn.style.display === 'none') {
+            body.classList.add('logged-in');
+          } else {
+            body.classList.remove('logged-in');
+          }
+        }
+      }
+      setInterval(updateLogoutBtn, 500); // Refresca el estado cada medio segundo
+    </script>
+    <script>
+      // Ocultar header al hacer scroll hacia abajo y mostrar al subir (solo móvil)
+      let lastScrollY = window.scrollY;
+      let ticking = false;
+      function handleHeaderScroll() {
+        if (window.innerWidth > 600) return;
+        const header = document.getElementById('mainHeader');
+        if (!header) return;
+        const currentScroll = window.scrollY;
+        if (currentScroll > lastScrollY && currentScroll > 40) {
+          header.classList.add('hide-on-scroll');
+        } else {
+          header.classList.remove('hide-on-scroll');
+        }
+        lastScrollY = currentScroll;
+        ticking = false;
+      }
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          window.requestAnimationFrame(handleHeaderScroll);
+          ticking = true;
+        }
+      });
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 600) {
+          const header = document.getElementById('mainHeader');
+          if (header) header.classList.remove('hide-on-scroll');
+        }
+      });
+    </script>
+  </body>
 </html>

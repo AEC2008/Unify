@@ -296,13 +296,28 @@ function abrirChatCon(uid, displayName) {
     if (!chatDiv) {
         chatDiv = document.createElement('div');
         chatDiv.id = 'chatDiv';
-        chatDiv.style.position = 'fixed';
-        chatDiv.style.bottom = '80px';
-        chatDiv.style.right = '30px';
-        chatDiv.style.width = '320px';
+        // Responsivo: ancho completo en móvil
+        if (window.innerWidth <= 600) {
+          chatDiv.style.position = 'fixed';
+          chatDiv.style.bottom = '0';
+          chatDiv.style.left = '0';
+          chatDiv.style.right = '0';
+          chatDiv.style.width = '99vw';
+          chatDiv.style.maxWidth = '99vw';
+          chatDiv.style.borderRadius = '10px 10px 0 0';
+          chatDiv.style.top = '';
+          chatDiv.style.transform = '';
+          chatDiv.style.minWidth = '0';
+        } else {
+          chatDiv.style.position = 'fixed';
+          chatDiv.style.bottom = '80px';
+          chatDiv.style.right = '30px';
+          chatDiv.style.width = '320px';
+          chatDiv.style.borderRadius = '8px';
+          chatDiv.style.left = '';
+        }
         chatDiv.style.background = '#fff';
         chatDiv.style.border = '1px solid #ccc';
-        chatDiv.style.borderRadius = '8px';
         chatDiv.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
         chatDiv.style.zIndex = '1000';
         chatDiv.innerHTML = '';
@@ -364,13 +379,28 @@ function mostrarPerfilUsuario(uid) {
                 perfilDiv = document.createElement('div');
                 perfilDiv.id = 'perfilDiv';
                 perfilDiv.style.position = 'fixed';
-                perfilDiv.style.top = '50%';
-                perfilDiv.style.left = '50%';
-                perfilDiv.style.transform = 'translate(-50%, -50%)';
+                // Responsivo: ancho completo en móvil
+                if (window.innerWidth <= 600) {
+                  perfilDiv.style.width = '99vw';
+                  perfilDiv.style.maxWidth = '99vw';
+                  perfilDiv.style.left = '50%';
+                  perfilDiv.style.transform = 'translate(-50%, -50%)';
+                  perfilDiv.style.borderRadius = '10px';
+                  perfilDiv.style.padding = '0';
+                  perfilDiv.style.top = '50%';
+                  perfilDiv.style.maxHeight = '95vh';
+                  perfilDiv.style.overflowY = 'auto';
+                } else {
+                  perfilDiv.style.width = '390px';
+                  perfilDiv.style.maxHeight = '85vh';
+                  perfilDiv.style.overflowY = 'auto';
+                  perfilDiv.style.left = '50%';
+                  perfilDiv.style.transform = 'translate(-50%, -50%)';
+                  perfilDiv.style.borderRadius = '24px';
+                  perfilDiv.style.padding = '';
+                  perfilDiv.style.top = '50%';
+                }
                 perfilDiv.style.zIndex = '3000';
-                perfilDiv.style.width = '390px';
-                perfilDiv.style.maxHeight = '85vh';
-                perfilDiv.style.overflowY = 'auto';
                 document.body.appendChild(perfilDiv);
             }
             // Si es tu propio perfil, permite editar bio
